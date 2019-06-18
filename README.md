@@ -15,3 +15,9 @@ Cajón de sastre de comandos útiles para ubuntu / centos
 ```
 nice -n 10 ionice -c2 -n 7 mysqldump -h localhost -u <usuario_bbd> -p<pass> --default-character-set=utf8 --ignore-table=logs --ignore-table=backoffice_logs --ignore-table=email_queue <nombre_bbdd> | pigz -6 > /var<path>/export_bbdd_pro_$(date +"%Y-%m-%d_%Hh").sql.gz
 ```
+
+# Comprimir imágenes de un servidor de manera recursiva con jpegoptimizer. 
+
+```
+find . -type f -name "*.jpg" -o -name "*.JPG" | xargs jpegoptim -f --size=30k --strip-all
+```
